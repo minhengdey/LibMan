@@ -54,12 +54,12 @@
                                     <div
                                         style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
                                         <p style="color: var(--text-light); margin-bottom: 0.5rem;">
-                                            Bạn đọc tìm kiếm sách?
+                                            Bạn đọc tìm kiếm tài liệu?
                                         </p>
                                         <a href="${pageContext.request.contextPath}/reader/search"
                                             class="btn btn-primary"
                                             style="display:inline-block; width:100%; text-align:center;">
-                                            Tìm kiếm sách
+                                            Tìm kiếm tài liệu
                                         </a>
                                     </div>
                 </div>

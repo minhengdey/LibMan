@@ -16,12 +16,29 @@
     --danger: #E89090;
     --white: #FFFFFF;
     --border: #D0E1F0;
+    --ui-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Force the UI font across all elements to ensure consistent typography */
+    font-family: var(--ui-font) !important;
+}
+
+/* Ensure the whole document uses a single, consistent UI font */
+html {
+    font-family: var(--ui-font);
+}
+
+/* Ensure code-like elements don't force a different font */
+code,
+pre,
+kbd,
+samp,
+tt {
+    font-family: inherit;
 }
 
 body {
@@ -502,7 +519,7 @@ table.balanced-table tbody td {
     color: var(--primary-blue);
     text-decoration: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
     font-family: inherit;
 }
@@ -525,20 +542,20 @@ table.balanced-table tbody td {
     border-color: var(--dark-blue);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(107, 155, 209, 0.3),
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .pagination-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(107, 155, 209, 0.2),
-                inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .pagination-btn:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(107, 155, 209, 0.3),
-                0 2px 4px rgba(0, 0, 0, 0.1);
+        0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .pagination-btn-disabled {
@@ -548,7 +565,7 @@ table.balanced-table tbody td {
     cursor: not-allowed;
     opacity: 0.6;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-                inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        inset 0 1px 2px rgba(0, 0, 0, 0.05);
     pointer-events: none;
 }
 
@@ -562,7 +579,7 @@ table.balanced-table tbody td {
     border-color: #d0d0d0;
     transform: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-                inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .pagination-info {
@@ -604,18 +621,18 @@ table.balanced-table tbody td {
     .container {
         padding: 0 1rem;
     }
-    
+
     .pagination {
         gap: 0.75rem;
         padding: 1rem 0;
     }
-    
+
     .pagination-btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
         min-width: 90px;
     }
-    
+
     .pagination-info {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;

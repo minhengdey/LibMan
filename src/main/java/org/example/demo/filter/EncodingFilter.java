@@ -20,7 +20,6 @@ public class EncodingFilter implements Filter {
         httpResponse.setCharacterEncoding("UTF-8");
 
         String uri = httpRequest.getRequestURI();
-        // Don't override content type for common static resource extensions
         if (uri.endsWith(".css") || uri.endsWith(".js") || uri.endsWith(".png")
                 || uri.endsWith(".jpg") || uri.endsWith(".jpeg") || uri.endsWith(".gif")
                 || uri.endsWith(".svg") || uri.endsWith(".woff") || uri.endsWith(".woff2")
@@ -29,7 +28,6 @@ public class EncodingFilter implements Filter {
             return;
         }
 
-        // For dynamic pages, set content type to HTML with UTF-8
         if (httpResponse.getContentType() == null || httpResponse.getContentType().isEmpty()) {
             httpResponse.setContentType("text/html; charset=UTF-8");
         }

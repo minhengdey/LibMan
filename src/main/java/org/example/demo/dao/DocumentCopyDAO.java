@@ -1,5 +1,6 @@
 package org.example.demo.dao;
 
+import org.example.demo.model.Document;
 import org.example.demo.model.DocumentCopy;
 import org.example.demo.util.DBConnection;
 
@@ -72,6 +73,6 @@ public class DocumentCopyDAO {
         String barcode = rs.getString("barcode");
         String status = rs.getString("status");
 
-        return new DocumentCopy(id, isbn, name, author, publisher, yearOfPublication, genre, description, barcode, status);
+        return new DocumentCopy(barcode, status, new Document(id, isbn, name, author, publisher, yearOfPublication, genre, description));
     }
 }

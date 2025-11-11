@@ -28,13 +28,11 @@ public class AuthenticationFilter implements Filter {
             return;
         }
 
-        // Check if user is logged in
         if (session == null || session.getAttribute("user") == null) {
             httpResponse.sendRedirect(contextPath + "/login");
             return;
         }
 
-        // Check role-based access
         String role = (String) session.getAttribute("role");
 
         if (uri.startsWith(contextPath + "/manager") && !"MANAGER".equals(role)) {

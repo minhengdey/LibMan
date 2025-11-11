@@ -6,17 +6,13 @@ public class LoanSlipDetail implements Serializable {
     private Integer id;
     private LoanSlip loanSlip;
     private DocumentCopy documentCopy;
-    private Float fine;
-    private String notes;
 
     public LoanSlipDetail() {}
 
-    public LoanSlipDetail(Integer id, LoanSlip loanSlip, DocumentCopy documentCopy, Float fine, String notes) {
+    public LoanSlipDetail(Integer id, LoanSlip loanSlip, DocumentCopy documentCopy) {
         this.id = id;
         this.loanSlip = loanSlip;
         this.documentCopy = documentCopy;
-        this.fine = fine;
-        this.notes = notes;
     }
 
     public Integer getId() {
@@ -41,21 +37,5 @@ public class LoanSlipDetail implements Serializable {
 
     public void setDocumentCopy(DocumentCopy documentCopy) {
         this.documentCopy = documentCopy;
-    }
-
-    public Float getFine() {
-        return fine;
-    }
-
-    public void setFine(Float fine) {
-        this.fine = fine;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
     }
 }

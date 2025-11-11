@@ -40,14 +40,13 @@ public class LoanSlipDetailDAO {
     }
 
     public boolean insert(LoanSlipDetail detail) {
-        String sql = "INSERT INTO tblloanslipdetail (loan_slip_id, document_copy_id, notes) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tblloanslipdetail (loan_slip_id, document_copy_id) VALUES (?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setInt(1, detail.getLoanSlip().getId());
             stmt.setString(2, detail.getDocumentCopy().getBarcode());
-            stmt.setString(3, detail.getNotes());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows > 0) {
@@ -66,8 +65,6 @@ public class LoanSlipDetailDAO {
     public LoanSlipDetail extractLoanSlipDetailFromResultSet(ResultSet rs) throws SQLException {
         LoanSlipDetail loanSlipDetail = new LoanSlipDetail();
         loanSlipDetail.setId(rs.getInt("lsd.id"));
-        loanSlipDetail.setFine(rs.getFloat("lsd.fine"));
-        loanSlipDetail.setNotes(rs.getString("lsd.notes"));
 
         return loanSlipDetail;
     }

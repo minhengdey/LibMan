@@ -7,25 +7,17 @@ public class LoanSlip implements Serializable {
     private Integer id;
     private LocalDateTime borrowDate;
     private LocalDateTime dueDate;
-    private String status;
-    private LocalDateTime returnDate;
-    private Float fine;
     private String notes;
     private Reader reader;
-    private Librarian librarian;
 
     public LoanSlip() {}
 
-    public LoanSlip(Integer id, LocalDateTime borrowDate, LocalDateTime dueDate, String status, LocalDateTime returnDate, Float fine, String notes, Reader reader, Librarian librarian) {
+    public LoanSlip(Integer id, LocalDateTime borrowDate, LocalDateTime dueDate, String notes, Reader reader) {
         this.id = id;
         this.borrowDate = borrowDate;
         this.dueDate = dueDate;
-        this.status = status;
-        this.returnDate = returnDate;
-        this.fine = fine;
         this.notes = notes;
         this.reader = reader;
-        this.librarian = librarian;
     }
 
     public Integer getId() {
@@ -52,30 +44,6 @@ public class LoanSlip implements Serializable {
         this.dueDate = dueDate;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(LocalDateTime returnDate) {
-        this.returnDate = returnDate;
-    }
-
-    public Float getFine() {
-        return fine;
-    }
-
-    public void setFine(Float fine) {
-        this.fine = fine;
-    }
-
     public String getNotes() {
         return notes;
     }
@@ -90,14 +58,6 @@ public class LoanSlip implements Serializable {
 
     public void setReader(Reader reader) {
         this.reader = reader;
-    }
-
-    public Librarian getLibrarian() {
-        return librarian;
-    }
-
-    public void setLibrarian(Librarian librarian) {
-        this.librarian = librarian;
     }
 }
 
